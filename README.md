@@ -11,4 +11,4 @@ Project will calculate stats for bikeshare usage in **New York**, **Chicago** an
 Project includes three input CSV files that contain raw data from Motivate, and bikeshare.py file containing the code
 
 ### Credits
-Project was completed by following the requirements and guidance given in Udacity Introduction to Python course
+Project was completed by following the requirements and guidance given in Udacity Programming for data science with Python course. https://www.udacity.com/course/programming-for-data-science-nanodegree--nd104
