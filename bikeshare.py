@@ -126,7 +126,7 @@ def time_stats(df):
     common_hour = (df['Start Time'].dt.hour).mode()[0]
 
     print('Most common month: {} \nMost common day: {} \nMost common hour: {}'.format(common_month,common_day,common_hour))
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % round((time.time() - start_time),3))
     print('-'*40)
 
 
@@ -145,10 +145,9 @@ def station_stats(df):
     # display most frequent combination of start station and end station trip
     common_combination = (df['Start Station']+' >> '+df['End Station']).mode()[0]
 
-    print('Most commonly used start station: {}'.format(common_start_station))
-    print('Most commonly used end station: {}'.format(common_end_station))
-    print('Most frequent combination: {}'.format(common_combination))
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print('Most common start station: {} \nMost common end station: {} \nMost frequent combination: {}'.format(
+          common_start_station, common_end_station, common_combination) )
+    print("\nThis took %s seconds." % round((time.time() - start_time),3))
     print('-'*40)
 
 
@@ -159,13 +158,13 @@ def trip_duration_stats(df):
     start_time = time.time()
 
     # display total travel time
-    total_travel_time = df['Trip Duration'].sum()
+    total_travel_time = round(df['Trip Duration'].sum())
 
     # display mean travel time
     mean_travel_time = round(df['Trip Duration'].mean())
 
     print ('Total travel time: {} seconds \nMean travel time: {} seconds'.format(total_travel_time, mean_travel_time))
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % round((time.time() - start_time),3))
     print('-'*40)
 
 
@@ -194,7 +193,7 @@ def user_stats(df):
     except:
         print('\nno birth data to share')
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % round((time.time() - start_time),3))
     print('-'*40)
 
 
